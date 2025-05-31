@@ -1,0 +1,36 @@
+{
+  "name": "getprofile-client",
+  "version": "1.0.0",
+  "description": "A TypeScript client for the GetProfile API",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "getprofile",
+    "api",
+    "client",
+    "profiling",
+    "ai"
+  ],
+  "homepage": "https://getprofile.miliukov.dev",
+  "author": "Egor Miliukov <milukove@gmail.com> (https://github.com/milukove)",
+  "repository": "github:milukove/getprofile-client",
+  "bugs": {
+    "url": "https://github.com/milukove/getprofile-client/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "node-fetch": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.29",
+    "@vitest/coverage-v8": "^3.1.4",
+    "msw": "^2.8.7",
+    "typescript": "^5.0.0",
+    "vitest": "^3.1.4"
+  }
+}
