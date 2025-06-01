@@ -56,9 +56,9 @@ run().catch(console.error);
 
 ## 📚 Documentation
 
-- **API Reference:** [https://getprofile-docs.miliukov.dev/api-reference](https://getprofile-docs.miliukov.dev/api-reference)
-- **Submit Data Guide:** [https://getprofile-docs.miliukov.dev/builders/submit-data](https://getprofile-docs.miliukov.dev/builders/submit-data)
-- **Get Profile Guide:** [https://getprofile-docs.miliukov.dev/builders/get-profile](https://getprofile-docs.miliukov.dev/builders/get-profile)
+- **API Reference:** [https://docs.getprofile-ai.com/api-reference](https://docs.getprofile-ai.com/api-reference)
+- **Submit Data Guide:** [https://docs.getprofile-ai.com/builders/submit-data](https://docs.getprofile-ai.com/builders/submit-data)
+- **Get Profile Guide:** [https://docs.getprofile-ai.com/builders/get-profile](https://docs.getprofile-ai.com/builders/get-profile)
 
 ---
 

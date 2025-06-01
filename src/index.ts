@@ -6,7 +6,7 @@ import fetch from "node-fetch";
 interface ClientConfig {
   /** App API key */
   apiKey: string;
-  /** Optional base API URL (e.g., https://getprofile.selfhosted.com) */
+  /** Optional base API URL (e.g., https://getprofile-ai.selfhosted.com) */
   apiUrl?: string;
 }
 
@@ -23,9 +23,9 @@ interface ProfileUpdateRequest {
 /**
  * A lightweight TypeScript client for the GetProfile API.
  *
- * 📚 API Reference: https://getprofile-docs.miliukov.dev/api-reference
- * 📚 Submit Data Guide: https://getprofile-docs.miliukov.dev/submit-data
- * 📚 Get Profile Guide: https://getprofile-docs.miliukov.dev/get-profile
+ * 📚 API Reference: https://docs.getprofile-ai.com/api-reference
+ * 📚 Submit Data Guide: https://docs.getprofile-ai.com/builders/submit-data
+ * 📚 Get Profile Guide: https://docs.getprofile-ai.com/builders/get-profile
  */
 export class GetProfileClient {
   private apiUrl?: string;
@@ -36,8 +36,7 @@ export class GetProfileClient {
    * @param config Configuration options.
    */
   constructor({ apiUrl, apiKey }: ClientConfig) {
-    this.apiUrl =
-      apiUrl?.replace(/\/$/, "") || "https://getprofile.miliukov.dev"; // Remove trailing slash if present
+    this.apiUrl = apiUrl?.replace(/\/$/, "") || "https://api.getprofile-ai.com"; // Remove trailing slash if present
     this.apiKey = apiKey;
   }
 
@@ -81,7 +80,7 @@ export class GetProfileClient {
    * @param data The data to process (string or structured JSON).
    * @param inputType Optional input type (e.g., "bio", "conversation").
    * @returns Server response confirming profile update was accepted.
-   * @see https://getprofile-docs.miliukov.dev/submit-data
+   * @see https://docs.getprofile-ai.com/builders/submit-data
    */
   async submitProfileUpdate(
     profileId: string,
@@ -89,7 +88,7 @@ export class GetProfileClient {
     inputType?: string
   ): Promise<any> {
     const body: ProfileUpdateRequest = { data, input_type: inputType };
-    return this._request("POST", `/api/v1/profile/${profileId}`, body);
+    return this._request("POST", `/v1/profile/${profileId}`, body);
   }
 
   /**
@@ -97,10 +96,10 @@ export class GetProfileClient {
    *
    * @param profileId The unique profile ID.
    * @returns The profile object with extracted data.
-   * @see https://getprofile-docs.miliukov.dev/get-profile
+   * @see https://docs.getprofile-ai.com/builders/get-profile
    */
   async getProfile(profileId: string): Promise<any> {
-    return this._request("GET", `/api/v1/profile/${profileId}`);
+    return this._request("GET", `/v1/profile/${profileId}`);
   }
 
   /**
@@ -108,9 +107,9 @@ export class GetProfileClient {
    *
    * @param profileId The unique profile ID.
    * @returns Server response confirming deletion.
-   * @see https://getprofile-docs.miliukov.dev/api-reference
+   * @see https://docs.getprofile-ai.com/api-reference
    */
   async deleteProfile(profileId: string): Promise<any> {
-    return this._request("DELETE", `/api/v1/profile/${profileId}`);
+    return this._request("DELETE", `/v1/profile/${profileId}`);
   }
 }
