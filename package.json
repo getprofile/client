@@ -13,9 +13,9 @@
   ],
   "homepage": "https://getprofile.miliukov.dev",
   "author": "Egor Miliukov <milukove@gmail.com> (https://github.com/milukove)",
-  "repository": "github:milukove/getprofile-client",
+  "repository": "github:getprofile/client",
   "bugs": {
-    "url": "https://github.com/milukove/getprofile-client/issues"
+    "url": "https://github.com/getprofile/client/issues"
   },
   "license": "MIT",
   "scripts": {
